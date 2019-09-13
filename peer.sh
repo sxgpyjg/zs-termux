@@ -6,7 +6,6 @@ if [ -d "$HOME/.config/peerflix-server" ] ; then
 	echo -e "\033[31m请用浏览器打开：http://localhost:5299\033[0m"
 
 else
-	rm -rf .config/peerflix-server
 	echo "安装nodejs"
 	pkg install nodejs -y
 	echo "安装peerflix-server"
