@@ -2,7 +2,6 @@
   "connections": 100,
   "tracker": true,
   "verify": true,
-  uploads: 10,
   "trackers": [
 	    "udp://tracker.coppersurfer.tk:6969/announce",
 		"udp://9.rarbg.to:2710/announce",
@@ -26,5 +25,5 @@
 		"udp://opentor.org:2710/announce"
 	],
    "dht": true, 
-   "path": "/Download"
+   "path": "/sdcard/Download"
 }
