@@ -1,11 +1,12 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
 
-if [ -d "$PREFIX/bin/peerflix-server" ] ; then
+if [ -d "$HOME/.config/peerflix-server" ] ; then
 	screen -dmS peerflix-server peerflix-server
 	echo -e "\033[31m请用浏览器打开：http://localhost:5299\033[0m"
 
 else
+	rm -rf .config/peerflix-server
 	echo "安装nodejs"
 	pkg install nodejs -y
 	echo "安装peerflix-server"
