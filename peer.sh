@@ -12,7 +12,6 @@ else
 	npm install -g peerflix-server
 	echo "使用推荐配置"	
 	wget "https://raw.githubusercontent.com/zsxwz/zs-termux/master/config.json"
-	mkdir ~/.config/peerflix-server/
 	cp config.conf ~/.config/peerflix-server/config.conf
 	screen -dmS peerflix-server peerflix-server
 	echo -e "\033[31m请用浏览器打开：http://localhost:5299\033[0m"
