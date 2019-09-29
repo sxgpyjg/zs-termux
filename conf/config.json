@@ -1,0 +1,29 @@
+{
+  "port": 27548,
+  "listen": "0.0.0.0",
+  "protocol": "vmess",
+  "settings": {
+    "clients": [
+      {
+        "id": "da88c433-d4bc-4fd5-86b1-b9c307049491",
+        "alterId": 64
+      }
+    ]
+  },
+  "streamSettings": {
+    "network": "ws",
+    "security": "none",
+    "wsSettings": {
+      "path": "/zsxwz",
+      "headers": {}
+    }
+  },
+  "tag": "",
+  "sniffing": {
+    "enabled": true,
+    "destOverride": [
+      "http",
+      "tls"
+    ]
+  }
+}
