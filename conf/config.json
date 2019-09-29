@@ -1,29 +1,73 @@
 {
-  "port": 27548,
-  "listen": "0.0.0.0",
-  "protocol": "vmess",
-  "settings": {
-    "clients": [
+  "log":{},
+  "dns":{},
+  "stats":{},
+  "inbounds":[
+    {
+      "port":"1080",
+      "protocol":"socks",
+      "settings":{
+        "auth":"noauth",
+        "udp":true
+      },
+      "tag":"in-0"
+    },
+    {
+      "port":"1081",
+      "protocol":"http",
+      "settings":{},
+      "tag":"in-1"
+    }
+  ],
+  "outbounds":[
+    {
+      "protocol":"vmess",
+      "settings":{
+        "vnext":[
+          {
+            "port":443,
+            "users":[
+              {
+                "id":"19043be0-61c6-4f78-bd10-716bbd8f6827",
+                "alterId":32
+              }
+            ]
+          }
+        ]
+      },
+      "tag":"out-0",
+      "streamSettings":{
+        "network":"ws",
+        "security":"none",
+        "wsSettings":{
+          "path":"/dfgvh"
+        }
+      }
+    },
+    {
+      "tag":"direct",
+      "protocol":"freedom",
+      "settings":{}
+    },
+    {
+      "tag":"blocked",
+      "protocol":"blackhole",
+      "settings":{}
+    }
+  ],
+  "routing":{
+    "domainStrategy":"IPOnDemand",
+    "rules":[
       {
-        "id": "da88c433-d4bc-4fd5-86b1-b9c307049491",
-        "alterId": 64
+        "type":"field",
+        "ip":[
+          "geoip:private"
+        ],
+        "outboundTag":"direct"
       }
     ]
   },
-  "streamSettings": {
-    "network": "ws",
-    "security": "none",
-    "wsSettings": {
-      "path": "/zsxwz",
-      "headers": {}
-    }
-  },
-  "tag": "",
-  "sniffing": {
-    "enabled": true,
-    "destOverride": [
-      "http",
-      "tls"
-    ]
-  }
+  "policy":{},
+  "reverse":{},
+  "transport":{}
 }
