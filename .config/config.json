@@ -1,60 +1,29 @@
 {
-    "log": {
-        "access": "/var/log/v2ray/access.log",
-        "error": "/var/log/v2ray/error.log",
-        "loglevel": "warning"
-    },
-    "inbound": {
-        "port": 23560,
-        "protocol": "vmess",
-        "settings": {
-            "clients": [
-                {
-                    "id": "6784eeb8-fd70-f852-d5b0-b654dee779af",
-                    "level": 1,
-                    "alterId": 128
-                }
-            ]
-        }
-    },
-    "outbound": {
-        "protocol": "freedom",
-        "settings": {}
-    },
-    "inboundDetour": [],
-    "outboundDetour": [
-        {
-            "protocol": "blackhole",
-            "settings": {},
-            "tag": "blocked"
-        }
-    ],
-    "routing": {
-        "strategy": "rules",
-        "settings": {
-            "rules": [
-                {
-                    "type": "field",
-                    "ip": [
-                        "0.0.0.0/8",
-                        "10.0.0.0/8",
-                        "100.64.0.0/10",
-                        "127.0.0.0/8",
-                        "169.254.0.0/16",
-                        "172.16.0.0/12",
-                        "192.0.0.0/24",
-                        "192.0.2.0/24",
-                        "192.168.0.0/16",
-                        "198.18.0.0/15",
-                        "198.51.100.0/24",
-                        "203.0.113.0/24",
-                        "::1/128",
-                        "fc00::/7",
-                        "fe80::/10"
-                    ],
-                    "outboundTag": "blocked"
-                }
-            ]
-        }
+  "port": 23568,
+  "listen": "0.0.0.0",
+  "protocol": "vmess",
+  "settings": {
+    "clients": [
+      {
+        "id": "5b3b3be4-eae6-45c0-a4f4-08e68aa2274d",
+        "alterId": 128
+      }
+    ]
+  },
+  "streamSettings": {
+    "network": "ws",
+    "security": "none",
+    "wsSettings": {
+      "path": "/zsxwz",
+      "headers": {}
     }
+  },
+  "tag": "",
+  "sniffing": {
+    "enabled": true,
+    "destOverride": [
+      "http",
+      "tls"
+    ]
+  }
 }
