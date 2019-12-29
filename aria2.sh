@@ -1,5 +1,5 @@
 if [ -x "$(command -v aria2c)" ] ; then
-	cd
+	cd ~
 	screen -dmS aria2 aria2c --enable-rpc --rpc-listen-all
 	screen -dmS aria3 aria3c --enable-rpc --rpc-listen-all --conf-path=/data/data/com.termux/files/home/.config/aria2/aria3.conf
 	screen -ls
@@ -8,14 +8,14 @@ else
 	pkg install aria2 screen
 	cd /data/data/com.termux/files/usr/bin
 	cp aria2c aria3c
-	cd
+	cd ~
 	mkdir .config
 	cd .config
-  mkdir aria2
-  cd aria2
+	mkdir aria2
+	cd aria2
 	echo "rpc-listen-port=6800" > aria2.conf
 	echo "rpc-listen-port=6801" > aria3.conf
-	cd
+	cd ~
 	screen -dmS aria2 aria2c --enable-rpc --rpc-listen-al
 	screen -dmS aria3 aria3c --enable-rpc --rpc-listen-all --conf-path=/data/data/com.termux/files/home/.config/aria2/aria3.conf
 	screen -ls
