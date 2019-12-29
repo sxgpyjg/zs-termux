@@ -1,4 +1,5 @@
 if [ -x "$(command -v aria2c)" ] ; then
+        pkg install update
 	cd ~
 	screen -dmS aria2 aria2c --enable-rpc --rpc-listen-all
 	screen -dmS aria3 aria3c --enable-rpc --rpc-listen-all --conf-path=/data/data/com.termux/files/home/.config/aria2/aria3.conf
@@ -16,8 +17,8 @@ else
 	echo "rpc-listen-port=6800" > aria2.conf
 	echo "rpc-listen-port=6801" > aria3.conf
 	cd ~
-	screen -dmS aria2 aria2c --enable-rpc --rpc-listen-al
-	screen -dmS aria3 aria3c --enable-rpc --rpc-listen-all --conf-path=/data/data/com.termux/files/home/.config/aria2/aria3.conf
+	screen -dmS aria2 aria2c --enable-rpc --rpc-listen-al &
+	screen -dmS aria3 aria3c --enable-rpc --rpc-listen-all --conf-path=/data/data/com.termux/files/home/.config/aria2/aria3.conf &
 	screen -ls
 	echo "aria2双开已完成，screen -r aria2即可查看，screen -r aria3查看另一个。"
 fi
